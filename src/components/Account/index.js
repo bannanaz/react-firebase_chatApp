@@ -1,17 +1,19 @@
 import React, { useContext } from 'react';
-
 import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
 import { AuthUserContext, withAuthorization } from '../Session';
+import ProfilePicker from '../ProfilePicker';
 
 const AccountPage = () => {
-    const { email } = useContext(AuthUserContext);
+    const { username, email } = useContext(AuthUserContext);
 
     return (
         <div>
-            <h1>Account: {email}</h1>
+            <h1>Hello {username}!</h1>
+            <h2>Your e-mail used for this account: {email}</h2>
             <PasswordForgetForm />
             <PasswordChangeForm />
+            <ProfilePicker />
         </div>
     );
 }
