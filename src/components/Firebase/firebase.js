@@ -2,7 +2,9 @@ import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 
+const config = {
 
+};
 
 class Firebase {
     constructor() {
@@ -12,6 +14,8 @@ class Firebase {
         this.auth = app.auth();
         this.db = app.database();
     }
+
+
 
     // *** Auth API ***
 
