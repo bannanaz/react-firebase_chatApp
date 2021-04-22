@@ -63,7 +63,7 @@ class MessagesBase extends Component {
     };
 
     render() {
-        const { text, messages, loading } = this.state;
+        const { text, messages, username, loading } = this.state;
         return (
             <AuthUserContext.Consumer>
                 {authUser => (
@@ -71,6 +71,7 @@ class MessagesBase extends Component {
                         {loading && <div>Loading ...</div>}
                         {messages ? (
                             <MessageList messages={messages}
+                                username={username}
                                 onRemoveMessage={this.onRemoveMessage}
                                 onEditMessage={this.onEditMessage}
                                 authUser={authUser} />
@@ -93,10 +94,11 @@ class MessagesBase extends Component {
 }
 
 
-const MessageList = ({ authUser, messages, onRemoveMessage, onEditMessage }) => (
+const MessageList = ({ authUser, messages, username, onRemoveMessage, onEditMessage }) => (
     <ul>
         {messages.map(message => (
             <MessageItem key={message.uid}
+                username={username}
                 message={message}
                 onRemoveMessage={onRemoveMessage}
                 onEditMessage={onEditMessage}
@@ -141,7 +143,10 @@ class MessageItem extends Component {
                         onChange={this.onChangeEditText}
                     />) : (
                     <span>
-                        <strong>{message.userId}</strong> {message.text}
+                        <strong>From: {message.username}</strong>
+                        <br></br>
+                        {message.text}
+                        <br></br>
                         {message.editedAt && <span>(Edited)</span>}
                     </span>
                 )}
