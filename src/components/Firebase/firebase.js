@@ -3,6 +3,14 @@ import 'firebase/auth';
 import 'firebase/database';
 
 const config = {
+    apiKey: "AIzaSyDS89R35nzkHZ0ONm6hqXeI_7KaW0E90fQ",
+    authDomain: "react-firebase--authentication.firebaseapp.com",
+    databaseURL: "https://react-firebase--authentication-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "react-firebase--authentication",
+    storageBucket: "react-firebase--authentication.appspot.com",
+    messagingSenderId: "709762870944",
+    appId: "1:709762870944:web:9269022775974d8539e3c5",
+    measurementId: "G-EEGV2EP660"
 
 };
 

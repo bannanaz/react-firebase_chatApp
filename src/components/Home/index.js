@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Messages from '../Messages.js';
-import { withAuthorization, AuthUserContext } from '../Session';
+import { withAuthorization } from '../Session';
 
 
 
