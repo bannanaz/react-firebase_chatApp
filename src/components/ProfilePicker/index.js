@@ -12,8 +12,8 @@ const ProfilePicker = () => {
 
         <div>
             <h3>Pick your profile picture</h3>
-            <img src={green} alt='picture of green plant' onClick={() => setProfilePic('green')}></img>
-            <img src={pink} alt='picture of pink flower' onClick={() => setProfilePic('pink')}></img>
+            <img src={green} alt='green plant' onClick={() => setProfilePic('green')}></img>
+            <img src={pink} alt='pink flower' onClick={() => setProfilePic('pink')}></img>
             <p>{profilePic}</p>
         </div>
     )

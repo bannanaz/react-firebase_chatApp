@@ -13,6 +13,7 @@ const SignUpPage = () => (<div>
 const INITIAL_STATE = {
     username: '',
     email: '',
+    profilepic: '',
     passwordOne: '',
     passwordTwo: '',
     error: null,
@@ -25,7 +26,7 @@ class SignUpFormBase extends Component {
         this.state = { ...INITIAL_STATE };
     }
     onSubmit = event => {
-        const { username, email, passwordOne, isAdmin } = this.state;
+        const { username, email, profilepic, passwordOne, isAdmin } = this.state;
         const roles = {};
         if (isAdmin) {
             roles[ROLES.ADMIN] = ROLES.ADMIN;
@@ -39,6 +40,7 @@ class SignUpFormBase extends Component {
                     .set({
                         username,
                         email,
+                        profilepic,
                         roles
                     });
             })
@@ -63,6 +65,7 @@ class SignUpFormBase extends Component {
         const {
             username,
             email,
+            profilepic,
             passwordOne,
             passwordTwo,
             isAdmin,
@@ -82,7 +85,7 @@ class SignUpFormBase extends Component {
                     value={username}
                     onChange={this.onChange}
                     type="text"
-                    placeholder="Full Name" 
+                    placeholder="Your name" 
                     />
                 <input
                     name="email"
